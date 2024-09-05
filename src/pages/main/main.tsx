@@ -15,6 +15,7 @@ import CitiesList from '../../components/cities-list/cities-list';
 import MainEmpty from './main-empty';
 
 function Main(): JSX.Element {
+
   const selectedCity = useAppSelector(selectedCitySelector);
   const sorting: Sorting = useAppSelector(selectSorting);
   const points = useAppSelector(pointsOffersByCity);

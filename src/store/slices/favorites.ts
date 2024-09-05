@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import {toast} from 'react-toastify';
 import { NameSpace } from '../../utils/constants';
 import { FavoritesSlice } from '../../types/state';
 import { fetchFavoriteOffers, favoriteAction } from '../api-actions';
@@ -29,6 +30,7 @@ export const favoritesSlice = createSlice({
       })
       .addCase(fetchFavoriteOffers.rejected, (state) => {
         state.status = RequestStatus.Error;
+        toast.error('Favorite offers are temporarily unavailable');
       })
       .addCase(favoriteAction.pending, (state) => {
         state.status = RequestStatus.Loading;
@@ -39,6 +41,7 @@ export const favoritesSlice = createSlice({
       })
       .addCase(favoriteAction.rejected, (state) => {
         state.status = RequestStatus.Error;
+        toast.error('Failed to add to favorites');
       });
   }
 });

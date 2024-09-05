@@ -1,6 +1,6 @@
 import { City } from './cities';
 
-const getRandomInteger = (a:number = 1, b:number = 500) => {
+export const getRandomInteger = (a:number = 1, b:number = 500) => {
   const lower = Math.ceil(Math.min(a, b));
   const upper = Math.floor(Math.max(a, b));
   const result = Math.random() * (upper - lower + 1) + lower;

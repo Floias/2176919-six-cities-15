@@ -33,6 +33,7 @@ export const offerSlice = createSlice({
       })
       .addCase(fetchSelectOffer.rejected, (state) => {
         state.status = RequestStatus.Error;
+        toast.error('The selected offer is temporarily unavailable');
       })
       .addCase(fetchOffersNearby.pending, (state) => {
         state.status = RequestStatus.Loading;
@@ -43,6 +44,7 @@ export const offerSlice = createSlice({
       })
       .addCase(fetchOffersNearby.rejected, (state) => {
         state.status = RequestStatus.Error;
+        toast.error('Could not get offers nearby');
       })
       .addCase(fetchReviews.pending, (state) => {
         state.status = RequestStatus.Loading;
@@ -53,6 +55,7 @@ export const offerSlice = createSlice({
       })
       .addCase(fetchReviews.rejected, (state) => {
         state.status = RequestStatus.Error;
+        toast.error('Failed to get reviews');
       })
       .addCase(reviewAction.pending, (state) => {
         state.reviewSendingStatus = RequestStatus.Loading;

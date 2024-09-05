@@ -14,7 +14,7 @@ function Location({city, isTabs}: LocationProps) {
   const currentCity = useAppSelector(selectedCitySelector);
   const isCurrentCity = city === currentCity;
   return (
-    <li className="locations__item">
+    <li className="locations__item" data-testid="cities-list-item">
       <a className={classNames(
         'locations__item-link',
         {'tabs__item' :isTabs},

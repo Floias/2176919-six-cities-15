@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {toast} from 'react-toastify';
 import { NameSpace } from '../../utils/constants';
 import { OffersSlice } from '../../types/state';
 import { fetchOffersAction } from '../api-actions';
@@ -35,6 +36,7 @@ export const offersSlice = createSlice({
       })
       .addCase(fetchOffersAction.rejected, (state) => {
         state.offersLoadingStatus = RequestStatus.Error;
+        toast.error('Receiving offers is temporarily unavailable');
       });
   }
 });
