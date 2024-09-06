@@ -3,7 +3,7 @@ name: Publish
 on:
   workflow_run:
     workflows:
-      - Build
+      - Build  # Проверьте имя рабочего процесса
     types:
       - completed
 
@@ -13,18 +13,18 @@ jobs:
     if: github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Checkout
-        uses: actions/checkout@v3  # Обновлено до v3
+        uses: actions/checkout@v3
 
       - name: Download build
-        uses: dawidd6/action-download-artifact@v3  # Обновлено до v3
+        uses: dawidd6/action-download-artifact@v3
         with:
           name: actions_artifacts
           workflow: Build
 
       - name: Deploy build to Github Pages
-        uses: JamesIves/github-pages-deploy-action@v4  # Оставлено, так как v4 уже актуальна
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ./actions_artifacts/dist
+          folder: ./actions_artifacts/dist  # Убедитесь, что этот путь корректен
           clean: true
           target-folder: gh-pages
           commit-message: "✔️ Сборка для gh-pages"
