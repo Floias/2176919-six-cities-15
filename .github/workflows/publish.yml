@@ -31,4 +31,4 @@ jobs:
 
       - name: Output published URL
         run: |
-          echo "Ваш проект опубликован по адресу: https://${{ env.BUILD_URL }}/${{ env.PR }}/"
+          echo "Ваш проект опубликован по адресу: ${{ env.BUILD_URL }}"
