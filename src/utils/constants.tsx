@@ -2,7 +2,7 @@ enum AppRoute {
   Root='2176919-six-cities-15/',
   Login='2176919-six-cities-15/login',
   Favorites='2176919-six-cities-15/favorites',
-  Offer='/offer/:id',
+  Offer='2176919-six-cities-15/offer/:id',
 }
 
 enum AuthorizationStatus {
