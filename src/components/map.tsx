@@ -17,13 +17,13 @@ export type Point = {
 export type Points = Point[];
 
 const defaultCustomIcon = new Icon({
-  iconUrl: '../img/pin.svg',
+  iconUrl: './img/pin.svg',
   iconSize: [27, 39],
   iconAnchor: [27, 39]
 });
 
 const currentCustomIcon = new Icon({
-  iconUrl: '../img/pin-active.svg',
+  iconUrl: './img/pin-active.svg',
   iconSize: [27, 39],
   iconAnchor: [27, 39]
 });

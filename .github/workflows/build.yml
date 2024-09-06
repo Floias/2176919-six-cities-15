@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -19,13 +19,12 @@ jobs:
 
       - name: Build
         run: |
-          NODE_ENV=development npm install && npm run build --if-present
-          if [[ $(find . -maxdepth 1 -type d -name 'dist') == '' ]]
-          then
+          npm install
+          npm run build --if-present || echo "No build script found"
+          if [[ ! -d "dist" ]]; then
             cp -r public dist
           fi
           mkdir actions_artifacts
-          echo "prev.event.number=${{ github.event.number }}" > actions_artifacts/env
           mv dist actions_artifacts
 
       - name: Save build
