@@ -28,7 +28,7 @@ jobs:
           mv dist actions_artifacts
 
       - name: Save build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@master
         with:
           name: actions_artifacts
           path: actions_artifacts
