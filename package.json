@@ -1,6 +1,7 @@
 {
   "name": "six-cities",
   "version": "14.0.0",
+  "homepage": "https://floias.github.io/2176919-six-cities-15",
   "type": "module",
   "scripts": {
     "start": "vite",
@@ -63,6 +64,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-    "homepage": "https://floias.github.io/2176919-six-cities-15"
+  }
 }
